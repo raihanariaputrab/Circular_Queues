@@ -57,6 +57,42 @@ namespace Circular_Queues
                     FRONT = FRONT + 1;
             }
         }
+        public void display()
+        {
+            int FRONT_position = FRONT;
+            int REAR_position = REAR;
+            if (FRONT == -1)
+            {
+                Console.WriteLine("Queue is empty\n");
+                return;
+            }
+            Console.WriteLine("\nElements in the queue are . . . . . . . . . . . . . . ");
+            if (FRONT_position <= REAR_position)
+            {
+                while (FRONT_position < REAR_position)
+                {
+                    Console.WriteLine(queue_array[FRONT_position] + " ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                while (FRONT_position <= max - 1)
+                {
+                    Console.WriteLine(queue_array[FRONT_position] + "    ");
+                    FRONT_position++;
+                }
+                FRONT_position = 0;
+
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.WriteLine(queue_array[FRONT_position] + "     ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+        }
     }
     internal class Program
     {
